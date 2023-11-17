@@ -8,7 +8,7 @@ const ErrorDialog = ({ language = "en" }: { language?: LanguageType }) => {
     }
 
     return (
-        <div>
+        <div className={classes.root}>
             <h2 className={classes.title}>{LANGUGAES.someErrorOccurred[language]}</h2>
             <button role='refresh' className={classes.button} onClick={handleRefreshClick}>{LANGUGAES.refreshPage[language]}</button>
         </div>

@@ -1,0 +1,10 @@
+.root {
+  max-width: 1280px;
+  padding: 2rem;
+  width: inherit;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
