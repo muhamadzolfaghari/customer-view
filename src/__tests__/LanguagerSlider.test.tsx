@@ -1,15 +1,9 @@
-import { fireEvent, render, screen } from "@testing-library/react"
-import ErrorDialog from "../components/ErrorDialog";
+import { render, screen } from "@testing-library/react"
 import LanguageSlider from "../components/LanguageSlider";
 
 test("Render Language Slider", async () => {
-    render(<LanguageSlider onChange={function (): void {
-        throw new Error("Function not implemented.");
-    }} />);
+    render(<LanguageSlider language="en" onChange={() => { }} />);
     expect(screen.getByText(/de/i)).toBeDefined();
     expect(screen.getByText(/en/i)).toBeDefined();
 })
 
-// test("Change Language", () => {
-//     render()
-// })

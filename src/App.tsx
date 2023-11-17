@@ -1,4 +1,4 @@
-import './App.css'
+import classes from './App.module.css';
 import ErrorDialog from './components/ErrorDialog';
 import Loading from './components/Loading';
 import LanguageSlider from './components/LanguageSlider';
@@ -13,6 +13,7 @@ interface IProps {
 }
 
 function Page({ data }: IProps) {
+  // A language to change text content of elements
   const [language, setLanguage] = useState<LanguageType>(localStorage.getItem("language") as LanguageType ?? "en");
 
   function handleLangaugeChange(language: LanguageType) {
@@ -20,21 +21,25 @@ function Page({ data }: IProps) {
   }
 
   return (
-    <div>
+    <div className={classes.root}>
+      <LanguageSlider onChange={handleLangaugeChange} language={language}></LanguageSlider>
       {data?.data.items.map((datum, index) => (
         <View key={index} names={datum.names} age={datum.age} language={language} />)
       )}
-      <LanguageSlider onChange={handleLangaugeChange} language={language}></LanguageSlider>
     </div>
   )
 }
 
+/**
+ * This hoc is handle to get first data and response a suitable value as a component or null.
+ * @returns React.Element
+ */
 function App() {
-  const language = localStorage.getItem("language") ?? "en" as LanguageType;
+  const language = (localStorage.getItem("language") ?? "en") as LanguageType;
   const { hasError, data, isLoading } = useGetCustomerQuery();
 
   if (isLoading) {
-    return <Loading />
+    return <Loading language={language} />
   }
 
   if (hasError) {
