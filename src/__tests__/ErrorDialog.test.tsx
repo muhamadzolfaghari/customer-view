@@ -6,5 +6,4 @@ test("Render Error Dialog", async () => {
     expect(screen.getByText(/Some error has occurred/i)).toBeDefined();
     expect(screen.getByRole("refresh")).toBeDefined();
     fireEvent(screen.getByRole("refresh"), new Event("click"));
-
 })

@@ -1,14 +1,16 @@
+import LANGUGAES from '../lib/language.const';
+import { LanguageType } from '../types/LanguageType';
 import classes from './Error.module.css';
 
-const ErrorDialog = () => {
+const ErrorDialog = ({ language = "en" }: { language?: LanguageType }) => {
     function handleRefreshClick() {
         location.href = "/";
     }
 
     return (
         <div>
-            <h2 className={classes.title}>Some error has occurred</h2>
-            <button role='refresh' className={classes.button} onClick={handleRefreshClick}>Refresh page</button>
+            <h2 className={classes.title}>{LANGUGAES.someErrorOccurred[language]}</h2>
+            <button role='refresh' className={classes.button} onClick={handleRefreshClick}>{LANGUGAES.refreshPage[language]}</button>
         </div>
     );
 };
