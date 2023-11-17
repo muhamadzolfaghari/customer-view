@@ -8,6 +8,9 @@ interface IProps {
   language?: LanguageType
 }
 
+/**
+ * Show name and age as main data which fetched from a web API.
+ */
 const View = ({ names, age, language = "en" }: IProps) => (
   <div className={classes.view}>
     <div className={classes.row} role="row">

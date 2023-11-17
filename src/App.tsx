@@ -13,6 +13,7 @@ interface IProps {
 }
 
 function Page({ data }: IProps) {
+  // A language to change text content of elements
   const [language, setLanguage] = useState<LanguageType>(localStorage.getItem("language") as LanguageType ?? "en");
 
   function handleLangaugeChange(language: LanguageType) {
@@ -29,6 +30,10 @@ function Page({ data }: IProps) {
   )
 }
 
+/**
+ * This hoc is handle to get first data and response a suitable value as a component or null.
+ * @returns React.Element
+ */
 function App() {
   const language = (localStorage.getItem("language") ?? "en") as LanguageType;
   const { hasError, data, isLoading } = useGetCustomerQuery();

@@ -2,6 +2,11 @@ import { ChangeEvent } from 'react';
 import classes from './LanguageSlider.module.css';
 import { LanguageType } from '../types/LanguageType';
 
+/**
+ * a switcher to change between English or Germany language.
+ * @param IProps
+ * @returns React.Element
+ */
 const LanguageSlider = ({ onChange, language }: { language: LanguageType, onChange: (value: LanguageType) => void; }) => {
 	function handleChange(event: ChangeEvent<HTMLInputElement>) {
 		const language = !event.target.checked ? "en" : "de";

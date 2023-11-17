@@ -2,6 +2,9 @@ import LANGUGAES from '../lib/language.const';
 import { LanguageType } from '../types/LanguageType';
 import classes from './Error.module.css';
 
+/**
+ * Error handling through showing a related message and a button to able user to refresh the page.
+ */
 const ErrorDialog = ({ language = "en" }: { language?: LanguageType }) => {
     function handleRefreshClick() {
         location.href = "/";
