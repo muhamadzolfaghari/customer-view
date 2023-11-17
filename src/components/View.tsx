@@ -7,12 +7,11 @@ interface IProps {
 
 const View = ({ names, age }: IProps) => (
     <div className={classes.view}>
-        <img src={"./user.png"} className={classes.avatar} />
         <div className={classes.row} role="row">
-            <h3 className={classes.name} role='name'>{names}</h3>
+            <h2 className={classes.name} role='name'>{names}</h2>
         </div>
         <div className={classes.row} role="row">
-            <span className={classes['item-key']}>age:</span><span>{age}</span>
+            <span className={classes['item-key']}>age:</span><span className={classes.age}>{age}</span>
         </div>
     </div >
 );
