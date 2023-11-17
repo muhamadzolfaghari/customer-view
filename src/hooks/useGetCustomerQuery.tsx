@@ -3,14 +3,6 @@ import { useEffect, useState } from "react";
 import { API_URL } from "../lib/api-url.const";
 import ICustomerResult from "../interfaces/ICustomerResult";
 
-function handleResponse() {
-
-}
-
-function handleError() {
-
-}
-
 export default function useGetCustomerQuery() {
     const [data, setData] = useState<ICustomerResult>();
     const [error, setError] = useState(false);
@@ -24,7 +16,7 @@ export default function useGetCustomerQuery() {
 
             setIsLoading(false);
             setData(response.data);
-        }).catch((error) => {
+        }).catch(() => {
             setError(true);
             setIsLoading(true)
         });

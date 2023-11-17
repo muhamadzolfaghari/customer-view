@@ -6,12 +6,13 @@ function App() {
   const { error, data, isLoading } = useGetCustomerQuery();
 
 
+  console.log(error);
+
+
   return (
-    <>
-      <div>
-        {data?.data.items.map((datum, index) => (<View key={index} names={datum.names} age={datum.age} />))}
-      </div>
-    </>
+    <div>
+      {data?.data.items.map((datum, index) => (<View key={index} names={datum.names} age={datum.age} />))}
+    </div>
   )
 }
 
