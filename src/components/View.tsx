@@ -6,14 +6,15 @@ interface IProps {
 }
 
 const View = ({ names, age }: IProps) => (
-    <div className={classes.stack}>
-        <div>
-            {names}
+    <div className={classes.view}>
+        <img src={"./user.png"} className={classes.avatar} />
+        <div className={classes['view-row']} role="row">
+            <span>name:</span><span>{names}</span>
         </div>
-        <div>
-            {age}
+        <div className={classes['view-row']} role="row">
+            <span>age:</span><span>{age}</span>
         </div>
-    </div>
+    </div >
 );
 
 export default View;
