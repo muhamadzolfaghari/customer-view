@@ -5,7 +5,7 @@ import ICustomerResult from "../interfaces/ICustomerResult";
 
 export default function useGetCustomerQuery() {
     const [data, setData] = useState<ICustomerResult>();
-    const [error, setError] = useState(false);
+    const [hasError, setHasError] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
@@ -13,16 +13,16 @@ export default function useGetCustomerQuery() {
 
         axios.get<ICustomerResult>(API_URL).then((response) => {
             if (!response.data.ok) {
-                setError(true);
+                setHasError(true);
             }
 
             setIsLoading(false);
             setData(response.data);
         }).catch(() => {
-            setError(true);
+            setHasError(true);
             setIsLoading(false)
         });
     }, []);
 
-    return { error, data, isLoading };
+    return { hasError, data, isLoading };
 }
