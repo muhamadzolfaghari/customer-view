@@ -11,7 +11,7 @@ const View = ({ names, age }: IProps) => (
             <h2 className={classes.name} role='name'>{names}</h2>
         </div>
         <div className={classes.row} role="row">
-            <span className={classes['item-key']}>age:</span><span>{age}</span>
+            <span className={classes['item-key']}>age:</span><span className={classes.age}>{age}</span>
         </div>
     </div >
 );
