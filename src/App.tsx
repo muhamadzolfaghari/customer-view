@@ -1,4 +1,5 @@
 import './App.css'
+import View from './components/View';
 import useGetCustomerQuery from './hooks/useGetCustomerQuery'
 
 function App() {
@@ -8,9 +9,7 @@ function App() {
   return (
     <>
       <div>
-        {
-          data?.data.items.map(it => (<div><div>name:</div><div>{it.names}</div></div>))
-        }
+        {data?.data.items.map((datum, index) => (<View key={index} names={datum.names} age={datum.age} />))}
       </div>
     </>
   )
