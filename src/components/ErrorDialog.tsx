@@ -6,9 +6,9 @@ const ErrorDialog = () => {
     }
 
     return (
-        <div className={classes.root}>
-            <h2 className={classes.title}>Some error is occurred</h2>
-            <button className={classes.button} onClick={handleRefreshClick}>Refresh page</button>
+        <div>
+            <h2 className={classes.title}>Some error has occurred</h2>
+            <button role='refresh' className={classes.button} onClick={handleRefreshClick}>Refresh page</button>
         </div>
     );
 };
