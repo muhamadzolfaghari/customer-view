@@ -1,4 +1,5 @@
 import './App.css'
+import Loading from './components/Loading';
 import View from './components/View';
 import useGetCustomerQuery from './hooks/useGetCustomerQuery'
 
@@ -11,6 +12,7 @@ function App() {
 
   return (
     <div>
+      {isLoading && <Loading />}
       {data?.data.items.map((datum, index) => (<View key={index} names={datum.names} age={datum.age} />))}
     </div>
   )

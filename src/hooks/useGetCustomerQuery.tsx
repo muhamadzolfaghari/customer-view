@@ -9,6 +9,8 @@ export default function useGetCustomerQuery() {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
+        setIsLoading(true);
+
         axios.get<ICustomerResult>(API_URL).then((response) => {
             if (!response.data.ok) {
                 setError(true);
@@ -18,7 +20,7 @@ export default function useGetCustomerQuery() {
             setData(response.data);
         }).catch(() => {
             setError(true);
-            setIsLoading(true)
+            setIsLoading(false)
         });
     }, []);
 
