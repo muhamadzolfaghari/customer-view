@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div>
-      {isLoading && <Loading />}
+      {!isLoading && <Loading />}
       {data?.data.items.map((datum, index) => (<View key={index} names={datum.names} age={datum.age} />))}
     </div>
   )

@@ -1,3 +1,20 @@
+.root {
+  --color: #555;
+
+  position: fixed;
+  inset: 0;
+  color: var(--color);
+  background-color: #9fdaffd2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.title {
+  margin: 0;
+}
+
 .lds-ellipsis {
   display: inline-block;
   position: relative;
@@ -10,7 +27,7 @@
   width: 13px;
   height: 13px;
   border-radius: 50%;
-  background: #fff;
+  background: var(--color);
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 .lds-ellipsis div:nth-child(1) {
