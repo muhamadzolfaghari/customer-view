@@ -1,0 +1,14 @@
+/*
+Theme Name: Betheme
+Theme URI: https://www.rtl-theme.com/author/TopTheme?aff=TopTheme
+Author: Muffin group
+Author URI: https://www.rtl-theme.com/author/TopTheme?aff=TopTheme
+Description: The biggest WordPress Theme ever
+Text Domain: betheme
+Version: 25.0.4
+
+All css files are placed in /css/ folder
+*/
+* {
+    font-family: Quicksand, Vazirmatn;
+}

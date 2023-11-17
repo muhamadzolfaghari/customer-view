@@ -1,8 +1,22 @@
-import { SetStateAction, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ICustomerResult from "../interfaces/ICustomerResult";
 import { API_URL } from "../lib/api-url.const";
 import axios from 'axios';
 
+/**
+ * This hook is responsible to hold request from customer web API.
+ * This result insist of three values:
+ * 
+ * 1- data
+ * Data is related to customer and the interface to show that is ICustomerResult
+ * 
+ * 2- hasError
+ * Whenever any exception is occurred the error should be shown on the page.
+ * 
+ * 3- isLoading 
+ * This can lead app to show a loading as let user to be waiting to get details from the web API.
+ * @returns result
+ */
 export default function useGetCustomerQuery() {
     const [data, setData] = useState<ICustomerResult>();
     const [hasError, setHasError] = useState(false);
