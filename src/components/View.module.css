@@ -1,21 +1,36 @@
 .view {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: start;
+  justify-content: left;
   background-color: white;
-  padding: 30px;
+  padding: 20px;
   margin-bottom: 20px;
   border-radius: 40px;
   box-shadow: 0 0 20px #a199ff;
+  min-width: 100px;
 }
 
-.view-row {
+.row {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .avatar {
   height: 60px;
+  padding-bottom: 8px;
   border-radius: 20px;
+}
+
+.name {
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.item-key {
+  font-size: 14px;
+  margin-right: 6px;
+  color: #a199ff;
 }
